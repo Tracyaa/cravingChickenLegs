@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="point tally">
-        <h1>Player 1: Dallas</h1>
-        <h1>Player 2: Tracy</h1>
+    <div class="point tally" class="center">
+        <h2 id="timer"></h2>
+        <h2>Player 1: Dallas</h2>
+        <h2>Player 2: Tracy</h2>
         <h2 class="score-board">ScoreBoard: 0</h2>
     </div>
     <div align="bottom" class="">
@@ -16,11 +17,14 @@
             <input type="text" name="name" value="name">
         </form>
     </div>
-    <div id="display">
+
+    <div id="display" class="center">
 
     </div>
+
     <script src="pixi.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="background.js"></script>
     <script type="text/javascript" src="skeleton.js"></script>
     <script type="text/javascript" src="drumStick.js"></script>
     <script type="text/javascript" src="chicken.js"></script>

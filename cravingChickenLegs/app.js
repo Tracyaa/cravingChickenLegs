@@ -1,6 +1,7 @@
 PIXI.utils.sayHello();
 
 const displayDiv = document.querySelector('#display')
+const timerHeader = document.getElementById("timer")
 const renderer = PIXI.autoDetectRenderer(500, 500, {
   transparent: true,
   resolution: 1
@@ -12,6 +13,7 @@ PIXI.loader
   .add("skeleton", "images/BODY_skeleton.png")
   .add("drumStick", "images/Pataepollo.png")
   .add("chicken", "images/chicken.png")
+  .add("greenBg", "images/background1.png")
 
 
 function animationLoop() {
@@ -19,94 +21,41 @@ function animationLoop() {
   renderer.render(stage);
 };
 
+let timeleft = 10;
 
-// var map = {}; // You could also use an array
-// onkeydown = onkeyup = function(e){
-//     e = e || event; // to deal with IE
-//     map[e.keyCode] = e.type == 'keydown';
-//     /* insert conditional here */
-//       ateDrumpStick()
-//     if (e.key === 'ArrowRight' && skeletonSprite.x < 740) {
-//       skeletonSprite.x += skeletonSprite.vx
-//       // console.log(skeletonSprite.x, skeletonSprite.y)
-//       // inspectSprite(skeletonSprite)
-//     } else if (e.key === 'ArrowLeft' && skeletonSprite.x > -20) {
-//       skeletonSprite.x -= skeletonSprite.vx
-//       // console.log(skeletonSprite.x, skeletonSprite.y)
-//       // inspectSprite(skeletonSprite)
-//     } else if (e.key === 'ArrowDown' && skeletonSprite.y < 520) {
-//       skeletonSprite.y += skeletonSprite.vy
-//       // console.log(skeletonSprite.x, skeletonSprite.y)
-//       // inspectSprite(skeletonSprite)
-//     } else if (e.key === 'ArrowUp' && skeletonSprite.y > -20) {
-//       skeletonSprite.y -= skeletonSprite.vy
-//       // console.log(skeletonSprite.x, skeletonSprite.y)
-//       // inspectSprite(skeletonSprite)
-//     }
-//     if (e.key === 'd' && chickenSprite.x < 740) {
-//       chickenSprite.x += chickenSprite.vx
-//       // console.log(chickenSprite.x, chickenSprite.y)
-//       // inspectSprite(chickenSprite)
-//     } else if (e.key === 'a' && chickenSprite.x > -20) {
-//       chickenSprite.x -= chickenSprite.vx
-//       // console.log(chickenSprite.x, chickenSprite.y)
-//       // inspectSprite(chickenSprite)
-//     } else if (e.key === 's' && chickenSprite.y < 520) {
-//       chickenSprite.y += chickenSprite.vy
-//       // console.log(chickenSprite.x, chickenSprite.y)
-//       // inspectSprite(chickenSprite)
-//     } else if (e.key === 'w' && chickenSprite.y > -20) {
-//       chickenSprite.y -= chickenSprite.vy
-//       // console.log(chickenSprite.x, chickenSprite.y)
-//       // inspectSprite(chickenSprite)
-//     }
-// }
-//
-//
-// window.addEventListener('keydown', event => {
-//   ateDrumpStick()
-//   if (event.key === 'ArrowRight' && skeletonSprite.x < 740) {
-//     skeletonSprite.x += skeletonSprite.vx
-//     // console.log(skeletonSprite.x, skeletonSprite.y)
-//     // inspectSprite(skeletonSprite)
-//   } else if (event.key === 'ArrowLeft' && skeletonSprite.x > -20) {
-//     skeletonSprite.x -= skeletonSprite.vx
-//     // console.log(skeletonSprite.x, skeletonSprite.y)
-//     // inspectSprite(skeletonSprite)
-//   } else if (event.key === 'ArrowDown' && skeletonSprite.y < 520) {
-//     skeletonSprite.y += skeletonSprite.vy
-//     // console.log(skeletonSprite.x, skeletonSprite.y)
-//     // inspectSprite(skeletonSprite)
-//   } else if (event.key === 'ArrowUp' && skeletonSprite.y > -20) {
-//     skeletonSprite.y -= skeletonSprite.vy
-//     // console.log(skeletonSprite.x, skeletonSprite.y)
-//     // inspectSprite(skeletonSprite)
-//   }
-// });
-//
-// window.addEventListener('keydown', event => {
-//   // debugger
-//   if (event.key === 'd' && chickenSprite.x < 740) {
-//     chickenSprite.x += chickenSprite.vx
-//     // console.log(chickenSprite.x, chickenSprite.y)
-//     // inspectSprite(chickenSprite)
-//   } else if (event.key === 'a' && chickenSprite.x > -20) {
-//     chickenSprite.x -= chickenSprite.vx
-//     // console.log(chickenSprite.x, chickenSprite.y)
-//     // inspectSprite(chickenSprite)
-//   } else if (event.key === 's' && chickenSprite.y < 520) {
-//     chickenSprite.y += chickenSprite.vy
-//     // console.log(chickenSprite.x, chickenSprite.y)
-//     // inspectSprite(chickenSprite)
-//   } else if (event.key === 'w' && chickenSprite.y > -20) {
-//     chickenSprite.y -= chickenSprite.vy
-//     // console.log(chickenSprite.x, chickenSprite.y)
-//     // inspectSprite(chickenSprite)
-//   }
-// })
-//
-//
-//
+const downloadTimer = setInterval(function() {
+  timerHeader.innerText = `${timeleft} Seconds`;
+  timeleft -= 1;
+
+  if (timeleft <= -1) {
+    drumStick.destroy()
+    PIXI.loader
+      .load(drumStickSetup)
+    timeleft = 10;
+  }
+}, 1000);
+
+const gameOverText = new PIXI.Text('Game Over!', {
+  fontFamily: 'Times New Roman',
+  fontSize: 36,
+  fill: 0xff1010,
+  align: 'center'
+});
+
+const gameOver = () => {
+  stage.addChild(gameOverText).position.set(325, 250)
+  // debugger
+  skeletonSprite.visible = false;
+  chickenSprite.visible = false;
+  drumStick.visible = false;
+
+  clearInterval(downloadTimer)
+  timerHeader.innerText = "";
+};
+
+
+
+
 
 
 
