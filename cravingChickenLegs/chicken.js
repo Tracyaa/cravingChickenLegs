@@ -1,17 +1,21 @@
 var chickenSprite;
 let chickenTotalScore = 0;
 
-const chickenLoader = () => {
-  PIXI.loader
-  .load(chickenSetup);
-}
+// const chickenLoader = () => {
+//   PIXI.loader
+//   .load(chickenSetup);
+// }
+const rectBackChicken = new PIXI.Rectangle(0, 0, 64, 64);
+const rectRightChicken = new PIXI.Rectangle(0, 64, 64, 64);
+const rectFrontChicken = new PIXI.Rectangle(0, 128, 64, 64);
+const rectLeftChicken = new PIXI.Rectangle(0, 192, 64, 64);
 
 function chickenSetup() {
   stage.interactive = true;
 
   const chickenTexture = PIXI.loader.resources["chicken"].texture;
 
-  chickenTexture.frame = rectFront;
+  chickenTexture.frame = rectFrontChicken;
 
   chickenSprite = new PIXI.Sprite(chickenTexture);
 
@@ -30,23 +34,27 @@ function chickenSetup() {
 
 const chickenMovement = () => {
   setInterval(function() {
-    if (rectFront.x >= 64 * 2) rectFront.x = 0;
+    if (rectFront.x >= 64 * 3) rectFront.x = 0;
     chickenSprite.texture.frame = rectFront;
     rectFront.x += 64;
-  }, 500);
+  }, 150);
 };
 
 
 const changeChickenDirection = (key) => {
   const texture = PIXI.loader.resources["chicken"].texture;
   if (key === 'd') {
-    texture.frame = rectLeft;
+    chickenSprite._texture.frame.y = 64;
+    chickenSprite._texture.frame.x = 0;
   } else if (key === 'a') {
-    texture.frame = rectRight;
+    chickenSprite._texture.frame.y = 192;
+    chickenSprite._texture.frame.x = 0;
   } else if (key === 's') {
-    texture.frame = rectFront;
+    chickenSprite._texture.frame.y = 128;
+    chickenSprite._texture.frame.x = 0;
   } else if (key === 'w') {
-    texture.frame = rectBack;
+    chickenSprite._texture.frame.y = 0;
+    chickenSprite._texture.frame.x = 0;
   }
 };
 

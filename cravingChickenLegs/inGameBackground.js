@@ -1,9 +1,9 @@
 var greenBg;
 
-const inGameBgLoader = () => {
-  PIXI.loader
-  .load(bgSetup);
-}; 
+// const inGameBgLoader = () => {
+//   PIXI.loader
+//   .load(bgSetup);
+// };
 
 function bgSetup() {
   stage.interactive = true;

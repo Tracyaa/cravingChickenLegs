@@ -1,9 +1,9 @@
 let drumStick;
 
-const drumStickLoader = () => {
-  PIXI.loader
-  .load(drumStickSetup);
-}
+// const drumStickLoader = () => {
+//   PIXI.loader
+//   .load(drumStickSetup);
+// }
 
 function drumStickSetup() {
   stage.interactive = true;
@@ -30,16 +30,16 @@ function animationLeg() {
   renderer.render(stage);
 };
 
-let timeleft = 10;
+let respondTime = 10; // seconds
 
-const downloadTimer = setInterval(function() {
-  // timerHeader.innerText = `${timeleft} Seconds`;
-  timeleft -= 1;
+const respondTimer = setInterval(function() {
+  // timerHeader.innerText = `${respondTime} Seconds`;
+  respondTime -= 1;
 
-  if (timeleft <= -1) {
+  if (respondTime <= -1) {
     drumStick.x = Math.floor(Math.random()*(renderer.width - 25));
     drumStick.y = Math.floor(Math.random()*(renderer.height - 25));
-    timeleft = 10;
+    respondTime = 10;
   }
 }, 1000);
 
@@ -53,7 +53,7 @@ const ateDrumpStick = () => {
     console.log(skeletonTotalScore);
     drumStick.x = Math.floor(Math.random()*(renderer.width - 25));
     drumStick.y = Math.floor(Math.random()*(renderer.height - 25));
-    timeleft = 10;
+    respondTime = 10;
   };
 };
 

@@ -1,3 +1,4 @@
+
 const gameStart = () => {
   PIXI.loader
     .load(bgSetup)
@@ -6,11 +7,17 @@ const gameStart = () => {
     .load(drumStickSetup)
 
   gameTimer();
-  // skeletonLoader();
-  // chickenLoader();
-  // inGameBgLoader();
-  // drumStickLoader();
-  // gameTimer();
+};
+
+let gameTime = 60;
+const gameTimer = () => {
+  setInterval(function() {
+    timerHeader.innerText = `${gameTime} Seconds`;
+    gameTime -= 1;
+    if (gameTime <= -1) {
+      gameOver();
+    }
+  }, 1000);
 };
 
 gameStart();

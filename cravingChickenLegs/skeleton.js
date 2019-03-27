@@ -7,10 +7,10 @@ const rectFront = new PIXI.Rectangle(0, 128, 64, 64);
 const rectRight = new PIXI.Rectangle(0, 192, 64, 64);
 const scoreBoardTag = document.querySelector(".score-board")
 
-const skeletonLoader = () => {
-  PIXI.loader
-  .load(skeletonSetup)
-}
+// const skeletonLoader = () => {
+//   PIXI.loader
+//   .load(skeletonSetup)
+// }
 
 function skeletonSetup() {
   stage.interactive = true;
@@ -21,10 +21,10 @@ function skeletonSetup() {
 
   skeletonSprite = new PIXI.Sprite(texture);
 
-  skeletonMovement()
+  skeletonInterval()
 
   skeletonSprite.scale.set(1.3, 1.3);
-  skeletonSprite.x = 700
+  skeletonSprite.x = 725
   skeletonSprite.y = 500
   skeletonSprite.vx = 30;
   skeletonSprite.vy = 30;
@@ -33,28 +33,33 @@ function skeletonSetup() {
   animationLoop();
 }
 
-const skeletonMovement = () => {
+const skeletonInterval = () => {
   setInterval(function() {
     if (rectFront.x >= 64 * 4) rectFront.x = 0;
     skeletonSprite.texture.frame = rectFront;
     rectFront.x += 64;
-  }, 500);
+  }, 150);
 };
+
 
 const changeDirection = (key) => {
   const texture = PIXI.loader.resources["skeleton"].texture;
   if (key === 'ArrowDown') {
-    // skeletonSprite.texture.frame = rectFront
-    texture.frame = rectFront;
+    skeletonSprite._texture.frame.y = 128;
+    skeletonSprite._texture.frame.x = 0;
+    console.log(skeletonSprite._texture.frame.x, skeletonSprite._texture.frame.y)
   } else if (key === 'ArrowLeft') {
-    // skeletonSprite.texture.frame = rectLeft
-    texture.frame = rectLeft;
+    skeletonSprite._texture.frame.y = 64;
+    skeletonSprite._texture.frame.x = 0;
+    console.log(skeletonSprite._texture.frame.x, skeletonSprite._texture.frame.y)
   } else if (key === 'ArrowUp') {
-    // skeletonSprite.texture.frame = rectBack
-    texture.frame = rectBack;
+    skeletonSprite._texture.frame.y = 0;
+    skeletonSprite._texture.frame.x = 0;
+    console.log(skeletonSprite._texture.frame.x, skeletonSprite._texture.frame.y)
   } else if (key === 'ArrowRight') {
-    // skeletonSprite.texture.frame = rectRight
-    texture.frame = rectRight;
+    skeletonSprite._texture.frame.y = 192;
+    skeletonSprite._texture.frame.x = 0;
+    console.log(skeletonSprite._texture.frame.x, skeletonSprite._texture.frame.y)
   }
 }
 
@@ -75,6 +80,6 @@ window.addEventListener('keydown', event => {
   }
 });
 
-function inspectSprite(skeletonSprite) {
-  console.log(skeletonSprite)
-};
+// function inspectSprite(skeletonSprite) {
+//   console.log(skeletonSprite)
+// };
