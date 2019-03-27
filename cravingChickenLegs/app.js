@@ -1,7 +1,7 @@
 PIXI.utils.sayHello();
 
 const displayDiv = document.querySelector('#display')
-const timerHeader = document.getElementById("timer")
+const timerHeader = document.querySelector("#timer")
 const renderer = PIXI.autoDetectRenderer(500, 500, {
   transparent: true,
   resolution: 1
