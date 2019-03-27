@@ -1,7 +1,10 @@
 var chickenSprite;
+let chickenTotalScore = 0;
 
-PIXI.loader
+const chickenLoader = () => {
+  PIXI.loader
   .load(chickenSetup);
+}
 
 function chickenSetup() {
   stage.interactive = true;
@@ -68,7 +71,11 @@ const chickenTouchSkeleton = () => {
   const skeletonSpriteBounds = skeletonSprite.getBounds();
   const chickenSpriteBounds = chickenSprite.getBounds();
   if (chickenSpriteBounds.x + chickenSpriteBounds.width > (skeletonSpriteBounds.x + 28) && chickenSpriteBounds.x < skeletonSpriteBounds.x + (skeletonSpriteBounds.width - 28) && chickenSpriteBounds.y + chickenSpriteBounds.height > (skeletonSpriteBounds.y + 30) && chickenSpriteBounds.y < skeletonSpriteBounds.y + skeletonSpriteBounds.height) {
-  gameOver()
+  // gameOver()
+  chickenTotalScore += 10;
+  console.log(`chicken ${chickenTotalScore}`);
+  chickenSprite.x = 0;
+  chickenSprite.y = 500;
   }
 };
 

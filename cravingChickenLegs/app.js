@@ -7,35 +7,50 @@ const renderer = PIXI.autoDetectRenderer(500, 500, {
   resolution: 1
 });
 const stage = new PIXI.Container();
+
 displayDiv.appendChild(renderer.view);
+
+/// total game time ///
+let gameTime = 60;
+const gameTimer = () => {
+  setInterval(function() {
+    timerHeader.innerText = `${gameTime} Seconds`;
+    gameTime -= 1;
+    if (gameTime <= -1) {
+      gameOver();
+    }
+  }, 1000);
+};
+
 
 PIXI.loader
   .add("skeleton", "images/BODY_skeleton.png")
   .add("drumStick", "images/Pataepollo.png")
   .add("chicken", "images/chicken.png")
   .add("greenBg", "images/background1.png")
-
+  // .add("mainMenuBg", "images/9046OT_06_02.jpg")
 
 function animationLoop() {
   requestAnimationFrame(animationLoop);
   renderer.render(stage);
 };
 
-let timeleft = 10;
+// const gameStart = () => {
+//   PIXI.loader
+//     .load(skeletonSetup)
+//     .load(chickenSetup)
+//     .load(drumStickSetup)
+//     .load(bgSetup)
+//
+//   gameTimer
+//   // skeletonLoader();
+//   // chickenLoader();
+//   // inGameBgLoader();
+//   // drumStickLoader();
+//   // gameTimer();
+// };
 
-const downloadTimer = setInterval(function() {
-  timerHeader.innerText = `${timeleft} Seconds`;
-  timeleft -= 1;
-
-  if (timeleft <= -1) {
-    drumStick.destroy()
-    PIXI.loader
-      .load(drumStickSetup)
-    timeleft = 10;
-  }
-}, 1000);
-
-const gameOverText = new PIXI.Text('Game Over!', {
+const gameOverText = new PIXI.Text('Times up!', {
   fontFamily: 'Times New Roman',
   fontSize: 36,
   fill: 0xff1010,
@@ -44,18 +59,13 @@ const gameOverText = new PIXI.Text('Game Over!', {
 
 const gameOver = () => {
   stage.addChild(gameOverText).position.set(325, 250)
-  // debugger
   skeletonSprite.visible = false;
   chickenSprite.visible = false;
   drumStick.visible = false;
 
-  clearInterval(downloadTimer)
+  clearInterval(downloadTimer) // drumStick
   timerHeader.innerText = "";
 };
-
-
-
-
 
 
 

@@ -9,4 +9,4 @@ This is a simple web browser game using javascript library, PixiJs.
 
 ## Usage
 
-```javascript
+```javascript```

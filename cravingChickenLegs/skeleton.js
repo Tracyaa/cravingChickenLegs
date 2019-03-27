@@ -1,13 +1,16 @@
 var skeletonSprite;
-let totalScore = 0;
+let skeletonTotalScore = 0;
 
 const rectBack = new PIXI.Rectangle(0, 0, 64, 64);
 const rectLeft = new PIXI.Rectangle(0, 64, 64, 64);
 const rectFront = new PIXI.Rectangle(0, 128, 64, 64);
 const rectRight = new PIXI.Rectangle(0, 192, 64, 64);
+const scoreBoardTag = document.querySelector(".score-board")
 
-PIXI.loader
+const skeletonLoader = () => {
+  PIXI.loader
   .load(skeletonSetup)
+}
 
 function skeletonSetup() {
   stage.interactive = true;
@@ -70,8 +73,6 @@ window.addEventListener('keydown', event => {
     changeDirection('ArrowUp')
     skeletonSprite.y -= skeletonSprite.vy
   }
-  const scoreBoardTag = document.querySelector(".score-board")
-  scoreBoardTag.innerText = `ScoreBoard: ${totalScore}`
 });
 
 function inspectSprite(skeletonSprite) {
