@@ -30,6 +30,11 @@ function animationLeg() {
   renderer.render(stage);
 };
 
+const randomRelocate = () => {
+  drumStick.x = Math.floor(Math.random()*(renderer.width - 25));
+  drumStick.y = Math.floor(Math.random()*(renderer.height - 25));
+}
+
 let respondTime = 10; // seconds
 
 const respondTimer = setInterval(function() {
@@ -37,8 +42,7 @@ const respondTimer = setInterval(function() {
   respondTime -= 1;
 
   if (respondTime <= -1) {
-    drumStick.x = Math.floor(Math.random()*(renderer.width - 25));
-    drumStick.y = Math.floor(Math.random()*(renderer.height - 25));
+    randomRelocate();
     respondTime = 10;
   }
 }, 1000);
@@ -51,8 +55,7 @@ const ateDrumpStick = () => {
     skeletonTotalScore += 10;
     scoreBoardTag.innerText = `ScoreBoard: ${skeletonTotalScore}`
     console.log(skeletonTotalScore);
-    drumStick.x = Math.floor(Math.random()*(renderer.width - 25));
-    drumStick.y = Math.floor(Math.random()*(renderer.height - 25));
+    randomRelocate();
     respondTime = 10;
   };
 };

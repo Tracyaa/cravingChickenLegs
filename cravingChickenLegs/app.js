@@ -10,12 +10,15 @@ const stage = new PIXI.Container();
 
 displayDiv.appendChild(renderer.view);
 
-PIXI.loader
-  .add("skeleton", "images/BODY_skeleton.png")
-  .add("drumStick", "images/Pataepollo.png")
-  .add("chicken", "images/chicken.png")
-  .add("greenBg", "images/background1.png")
-  .add("mainMenuBg", "images/9046OT_06_02.jpg")
+// const loadImages = () => {
+  PIXI.loader
+    .add("mainMenuBg", "images/9046OT_06_02.jpg")
+    .add("skeleton", "images/BODY_skeleton.png")
+    .add("drumStick", "images/Pataepollo.png")
+    .add("chicken", "images/chicken.png")
+    .add("greenBg", "images/background1.png")
+// }
+
 
 function animationLoop() {
   requestAnimationFrame(animationLoop);

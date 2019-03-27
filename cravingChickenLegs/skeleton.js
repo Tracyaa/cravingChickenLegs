@@ -47,21 +47,18 @@ const changeDirection = (key) => {
   if (key === 'ArrowDown') {
     skeletonSprite._texture.frame.y = 128;
     skeletonSprite._texture.frame.x = 0;
-    console.log(skeletonSprite._texture.frame.x, skeletonSprite._texture.frame.y)
   } else if (key === 'ArrowLeft') {
     skeletonSprite._texture.frame.y = 64;
     skeletonSprite._texture.frame.x = 0;
-    console.log(skeletonSprite._texture.frame.x, skeletonSprite._texture.frame.y)
   } else if (key === 'ArrowUp') {
     skeletonSprite._texture.frame.y = 0;
     skeletonSprite._texture.frame.x = 0;
-    console.log(skeletonSprite._texture.frame.x, skeletonSprite._texture.frame.y)
   } else if (key === 'ArrowRight') {
     skeletonSprite._texture.frame.y = 192;
     skeletonSprite._texture.frame.x = 0;
-    console.log(skeletonSprite._texture.frame.x, skeletonSprite._texture.frame.y)
   }
 }
+
 
 window.addEventListener('keydown', event => {
   ateDrumpStick()

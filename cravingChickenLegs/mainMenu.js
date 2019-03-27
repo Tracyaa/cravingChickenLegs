@@ -1,10 +1,11 @@
 var mainMenuBg;
 
-const mainMenuLoader = () => {
-  PIXI.loader
-    .load(mainMenuSetup)
-};
-
+// const mainMenuLoader = () => {
+//   PIXI.loader
+//     .load(mainMenuSetup)
+// };
+PIXI.loader
+  .load(mainMenuSetup)
 
 function mainMenuSetup() {
   stage.interactive = true;
