@@ -16,5 +16,3 @@ function bgSetup() {
   stage.addChild(greenBg);
   //
 };
-///test
-/// testing 2

@@ -1,12 +1,10 @@
 var skeletonSprite;
 let skeletonTotalScore = 0;
-
 const rectBack = new PIXI.Rectangle(0, 0, 64, 64);
 const rectLeft = new PIXI.Rectangle(0, 64, 64, 64);
 const rectFront = new PIXI.Rectangle(0, 128, 64, 64);
 const rectRight = new PIXI.Rectangle(0, 192, 64, 64);
-const scoreBoardTag = document.querySelector(".score-board")
-
+const skeletonScoreBoard = document.querySelector('.skeleton-score');
 // const skeletonLoader = () => {
 //   PIXI.loader
 //   .load(skeletonSetup)
@@ -16,12 +14,12 @@ function skeletonSetup() {
   stage.interactive = true;
 
   const texture = PIXI.loader.resources["skeleton"].texture;
-  // debugger
+
   texture.frame = rectFront;
 
   skeletonSprite = new PIXI.Sprite(texture);
 
-  skeletonInterval()
+  skeletonInterval();
 
   skeletonSprite.scale.set(1.3, 1.3);
   skeletonSprite.x = 725

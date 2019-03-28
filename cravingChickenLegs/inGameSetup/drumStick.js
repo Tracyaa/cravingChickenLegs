@@ -36,11 +36,8 @@ const randomRelocate = () => {
 }
 
 let respondTime = 10; // seconds
-
 const respondTimer = setInterval(function() {
-  // timerHeader.innerText = `${respondTime} Seconds`;
   respondTime -= 1;
-
   if (respondTime <= -1) {
     randomRelocate();
     respondTime = 10;
@@ -50,10 +47,11 @@ const respondTimer = setInterval(function() {
 const ateDrumpStick = () => {
   const legBounds = drumStick.getBounds();
   const skeletonSpriteBounds = skeletonSprite.getBounds();
+  // debugger
   if (legBounds.x + (legBounds.width + 14) > (skeletonSpriteBounds.x + 28) && legBounds.x < skeletonSpriteBounds.x + (skeletonSpriteBounds.width - 28) && legBounds.y + (legBounds.height + 14) > (skeletonSpriteBounds.y + 30) && legBounds.y < skeletonSpriteBounds.y + skeletonSpriteBounds.height) {
     //remove drumStick, load new one, add point to total.
     skeletonTotalScore += 10;
-    scoreBoardTag.innerText = `ScoreBoard: ${skeletonTotalScore}`
+    skeletonScoreBoard.innerText = `ScoreBoard: ${skeletonTotalScore}`
     console.log(skeletonTotalScore);
     randomRelocate();
     respondTime = 10;
