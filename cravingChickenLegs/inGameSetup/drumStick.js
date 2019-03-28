@@ -35,13 +35,15 @@ const randomRelocate = () => {
 }
 
 let respondTime = 10; // seconds
-const respondTimer = setInterval(function() {
-    respondTime -= 1;
-    if (respondTime <= -1) {
-        randomRelocate();
-        respondTime = 10;
-    }
-}, 1000);
+const respondTimer = () => {
+  const idle = setInterval(function() {
+      respondTime -= 1;
+      if (respondTime <= -1) {
+          randomRelocate();
+          respondTime = 10;
+      }
+  }, 1000);
+}
 
 
 
