@@ -12,7 +12,7 @@ class PlayersController < ApplicationController
     render json: @player
   end
 
-  def updated
+  def update
       @player = Player.find(params[:id])
       @player.update(player_params)
       render json: @player
