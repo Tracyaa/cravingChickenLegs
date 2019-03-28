@@ -1,5 +1,5 @@
 // var mainMenuBg;
-// const mainMenuStage = new PIXI.Container();
+// // const mainMenuStage = new PIXI.Container();
 // // const mainMenuLoader = () => {
 // //   PIXI.loader
 // //     .load(mainMenuSetup)

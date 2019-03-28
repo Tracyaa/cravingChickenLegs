@@ -15,7 +15,7 @@ const gameStart = () => {
     gameTimer();
 };
 
-let gameTime = 10;
+let gameTime = 60;
 const gameTimer = () => {
     setInterval(function() {
         timerHeader.innerText = `${gameTime} Seconds`;
@@ -32,4 +32,3 @@ window.addEventListener('keydown', event => {
     gameStart();
   }
 })
-
