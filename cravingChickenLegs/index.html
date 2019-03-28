@@ -9,11 +9,15 @@
 </head>
 
 <body>
-    <div align="bottom" class="">
-    </div>
+  <main class="flex-center">
     <div class="center">
         <h2 id="timer"></h2>
     </div>
+  </main>
+  <main class="flex-center">
+    <div align="bottom" class="">
+    </div>
+
     <div class="center">
         <div>
             <ul>
@@ -24,7 +28,7 @@
                         <input type="text" name="name" value="">
                         <input type="hidden" name="score">
                         <input type="hidden" name="character" value="chicken">
-                        <input type="submit">
+                        <li><input type="submit"></li>
                     </form>
                     <h2 class="chicken-score">Score: </h2>
                 </li>
@@ -33,31 +37,31 @@
         <div id="display" class=".flex-center ">
         </div>
         <div>
-            <ul>
-                <h2>Skeleton</h2>
-                <h3></h3>
-                <form placeholder="player name" class="skeleton-form" method="post">
-                    <input type="text" name="name" value="">
-                    <input type="hidden" name="score">
-                    <input type="hidden" name="character" value="skeleton">
-                    <input type="submit">
-                </form>
-                <h2 class="skeleton-score">Score: </h2>
-            </ul>
+          <ul>
+            <h2>Skeleton</h2>
+            <h3></h3>
+            <form placeholder="player name" class="skeleton-form" method="post">
+              <input type="text" name="name" value="">
+              <input type="hidden" name="score">
+              <input type="hidden" name="character" value="skeleton">
+              <li><input type="submit"></li>
+            </form>
+            <h2 class="skeleton-score">Score: </h2>
+          </ul>
         </div>
     </div>
 
     <script src="pixi.js"></script>
-    <script type="text/javascript" src="mainMenuSetup/mainMenu.js"></script>
-    <script type="text/javascript" src="mainMenuSetup/startButton.js"></script>
-    <script type="text/javascript" src="mainMenuSetup/players.js"></script>
     <script type="text/javascript" src="inGameSetup/app.js"></script>
+    <script type="text/javascript" src="mainMenuSetup/mainMenu.js"></script>
+    <script type="text/javascript" src="mainMenuSetup/players.js"></script>
     <script type="text/javascript" src="inGameSetup/inGameBackground.js"></script>
     <script type="text/javascript" src="inGameSetup/skeleton.js"></script>
     <script type="text/javascript" src="inGameSetup/drumStick.js"></script>
     <script type="text/javascript" src="inGameSetup/chicken.js"></script>
     <script type="text/javascript" src="inGameSetup/gameStart.js"></script>
     <script type="text/javascript" src="inGameSetup/gameOver.js"></script>
+  </main>
 </body>
 
 </html>

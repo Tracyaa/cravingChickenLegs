@@ -1,27 +1,25 @@
-const gameStartText = new PIXI.Text('Times up!', {
-    fontFamily: 'Times New Roman',
-    fontSize: 36,
-    fill: 0xff1010,
-    align: 'center'
-});
-
 const gameStart = () => {
-    PIXI.loader
-        .load(bgSetup)
-        .load(skeletonSetup)
-        .load(chickenSetup)
-        .load(drumStickSetup)
 
-    gameTimer();
+  PIXI.loader
+      .load(bgSetup)
+      .load(skeletonSetup)
+      .load(chickenSetup)
+      .load(drumStickSetup)
+
+  gameTimer();
+  respondTimer()
 };
 
-let gameTime = 60;
+timerHeader.innerText = "press space to start"
+
+let gameTime = 25;
 const gameTimer = () => {
-    setInterval(function() {
+    const idle = setInterval(function() {
         timerHeader.innerText = `${gameTime} Seconds`;
         gameTime -= 1;
         if (gameTime <= -1) {
             gameOver();
+            clearInterval(idle)
         }
     }, 1000);
 };
@@ -30,5 +28,6 @@ window.addEventListener('keydown', event => {
   // debugger
   if (event.key === " ") {
     gameStart();
+    gameTime = 25;
   }
 })
