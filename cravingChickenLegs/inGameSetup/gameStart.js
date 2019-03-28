@@ -19,5 +19,4 @@ const gameTimer = () => {
     }
   }, 1000);
 };
-
 gameStart();

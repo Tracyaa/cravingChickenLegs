@@ -1,14 +1,15 @@
 var chickenSprite;
 let chickenTotalScore = 0;
+const rectBackChicken = new PIXI.Rectangle(0, 0, 64, 64);
+const rectRightChicken = new PIXI.Rectangle(0, 64, 64, 64);
+const rectFrontChicken = new PIXI.Rectangle(0, 128, 64, 64);
+const rectLeftChicken = new PIXI.Rectangle(0, 192, 64, 64);
+const chickenScoreBoard = document.querySelector('.chicken-score');
 
 // const chickenLoader = () => {
 //   PIXI.loader
 //   .load(chickenSetup);
 // }
-const rectBackChicken = new PIXI.Rectangle(0, 0, 64, 64);
-const rectRightChicken = new PIXI.Rectangle(0, 64, 64, 64);
-const rectFrontChicken = new PIXI.Rectangle(0, 128, 64, 64);
-const rectLeftChicken = new PIXI.Rectangle(0, 192, 64, 64);
 
 function chickenSetup() {
   stage.interactive = true;
@@ -81,6 +82,7 @@ const chickenTouchSkeleton = () => {
   const chickenSpriteBounds = chickenSprite.getBounds();
   if (chickenSpriteBounds.x + chickenSpriteBounds.width > (skeletonSpriteBounds.x + 28) && chickenSpriteBounds.x < skeletonSpriteBounds.x + (skeletonSpriteBounds.width - 28) && chickenSpriteBounds.y + chickenSpriteBounds.height > (skeletonSpriteBounds.y + 30) && chickenSpriteBounds.y < skeletonSpriteBounds.y + skeletonSpriteBounds.height) {
   chickenTotalScore += 10;
+  chickenScoreBoard.innerText = `Score: ${chickenTotalScore}`
   console.log(`chicken ${chickenTotalScore}`);
   chickenSprite.x = 0;
   chickenSprite.y = 500;
