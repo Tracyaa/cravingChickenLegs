@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>PixiJs</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
+</head>
+
+<body>
     <div align="bottom" class="">
-     </div>
-     <div class="center">
-         <h2 id="timer"></h2>
-     </div>
-     <div class="center">
-         <div>
-             <ul>
-                 <li>
-                     <h2>Chicken</h2>
-                     <h3></h3>
-                     <form placeholder="player name" class="chicken-form" method="post">
-                         <input type="text" name="name" value="">
-                         <input type="hidden" name="score">
-                         <input type="hidden" name="character" value="chicken">
-                         <input type="submit">
-                     </form>
-                     <h2 class="chicken-score">Score: </h2>
-                 </li>
-             </ul>
-         </div>
-         <div id="display" class=".flex-center ">
-         </div>
-         <div>
-             <ul>
-                 <h2>Skeleton</h2>
-                 <h3></h3>
-                 <form placeholder="player name" class="skeleton-form" method="post">
-                     <input type="text" name="name" value="">
-                     <input type="hidden" name="score">
-                     <input type="hidden" name="character" value="skeleton">
-                     <input type="submit">
-                 </form>
-                 <h2 class="skeleton-score">Score: </h2>
-             </ul>
-         </div>
-     </div>
+    </div>
+    <div class="center">
+        <h2 id="timer"></h2>
+    </div>
+    <div class="center">
+        <div>
+            <ul>
+                <li>
+                    <h2>Chicken</h2>
+                    <h3></h3>
+                    <form placeholder="player name" class="chicken-form" method="post">
+                        <input type="text" name="name" value="">
+                        <input type="hidden" name="score">
+                        <input type="hidden" name="character" value="chicken">
+                        <input type="submit">
+                    </form>
+                    <h2 class="chicken-score">Score: </h2>
+                </li>
+            </ul>
+        </div>
+        <div id="display" class=".flex-center ">
+        </div>
+        <div>
+            <ul>
+                <h2>Skeleton</h2>
+                <h3></h3>
+                <form placeholder="player name" class="skeleton-form" method="post">
+                    <input type="text" name="name" value="">
+                    <input type="hidden" name="score">
+                    <input type="hidden" name="character" value="skeleton">
+                    <input type="submit">
+                </form>
+                <h2 class="skeleton-score">Score: </h2>
+            </ul>
+        </div>
+    </div>
 
     <script src="pixi.js"></script>
     <script type="text/javascript" src="mainMenuSetup/mainMenu.js"></script>
@@ -56,5 +58,6 @@
     <script type="text/javascript" src="inGameSetup/chicken.js"></script>
     <script type="text/javascript" src="inGameSetup/gameStart.js"></script>
     <script type="text/javascript" src="inGameSetup/gameOver.js"></script>
-  </body>
+</body>
+
 </html>
