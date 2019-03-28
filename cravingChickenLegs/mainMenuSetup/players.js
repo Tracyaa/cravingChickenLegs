@@ -48,7 +48,7 @@ bodyTag.addEventListener("submit", (event) => {
     }
 })
 
-<<<<<<< HEAD
+
 const getPlayers = () => {
     return fetch("http://localhost:3000/players")
         .then(res => res.json())
@@ -63,9 +63,9 @@ getPlayers()
     })
 
 function topFivePlayers(array) {
-
+  
 }
-=======
+
 const updateScoreApi = (playerId, playerScore) => {
   // debugger
     return fetch(`http://localhost:3000/players/${playerId}`, {
