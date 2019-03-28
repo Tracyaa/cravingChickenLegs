@@ -19,4 +19,10 @@ const gameTimer = () => {
     }
   }, 1000);
 };
-gameStart();
+
+window.addEventListener('keydown', event => {
+  // debugger
+  if (event.key === " ") {
+    gameStart();
+  }
+})
