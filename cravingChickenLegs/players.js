@@ -28,6 +28,7 @@ const createPlayerAPI = (name, character) => {
 
 bodyTag.addEventListener("submit", (event) => {
     event.preventDefault()
+    alert("akjhdhskluf")
     if (event.target.className === "chicken-form") {
         const hideChickenForm = (event.target.style.display = "none")
         const chickenNameValue = event.target.name.value

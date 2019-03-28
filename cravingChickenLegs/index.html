@@ -7,36 +7,43 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <!-- <div class="point tally" class="center">
-        <h2 id="timer"></h2>
-        <h2>Player 1: Dallas</h2>
-        <h2>Player 2: Tracy</h2>
-        <h2 class="score-board">ScoreBoard: 0</h2>
-    </div> -->
     <div align="bottom" class="">
-        <form class="form" action="index.html" method="post">
-            <input type="text" name="name" value="name">
-        </form>
-    </div>
-    <div class="center">
-      <h2 id="timer"></h2>
-    </div>
-    <div class="center">
-      <div>
-        <ul>
-          <li><h2>Chicken: Dallas</h2></li>
-          <li><h2 class="chicken-score">ScoreBoard: 0</h2></li>
-        </ul>
-      </div>
-      <div id="display">
-      </div>
-      <div>
-        <ul>
-          <li><h2>Skeleton: Tracy</h2></li>
-          <li><h2 class="score-board">ScoreBoard: 0</h2></li>
-        </ul>
-      </div>
-    </div>
+     </div>
+     <div class="center">
+         <h2 id="timer"></h2>
+     </div>
+     <div class="center">
+         <div>
+             <ul>
+                 <li>
+                     <h2>Chicken</h2>
+                     <h3></h3>
+                     <form placeholder="player name" class="chicken-form" method="post">
+                         <input type="text" name="name" value="">
+                         <input type="hidden" name="score">
+                         <input type="hidden" name="character" value="chicken">
+                         <input type="submit">
+                     </form>
+                     <h2 class="chicken-score">Score: </h2>
+                 </li>
+             </ul>
+         </div>
+         <div id="display">
+         </div>
+         <div>
+             <ul>
+                 <h2>Skeleton</h2>
+                 <h3></h3>
+                 <form placeholder="player name" class="skeleton-form" method="post">
+                     <input type="text" name="name" value="">
+                     <input type="hidden" name="score">
+                     <input type="hidden" name="character" value="skeleton">
+                     <input type="submit">
+                 </form>
+                 <h2 class="skeleton-score">Score: </h2>
+             </ul>
+         </div>
+     </div>
 
     <script src="pixi.js"></script>
     <script type="text/javascript" src="app.js"></script>
@@ -47,5 +54,6 @@
     <script type="text/javascript" src="chicken.js"></script>
     <script type="text/javascript" src="gameStart.js"></script>
     <script type="text/javascript" src="gameOver.js"></script>
+    <script type="text/javascript" src="players.js"></script>
   </body>
 </html>
