@@ -1,13 +1,13 @@
 const gameStart = () => {
 
-  PIXI.loader
-      .load(bgSetup)
-      .load(skeletonSetup)
-      .load(chickenSetup)
-      .load(drumStickSetup)
+    PIXI.loader
+        .load(bgSetup)
+        .load(skeletonSetup)
+        .load(chickenSetup)
+        .load(drumStickSetup)
 
-  gameTimer();
-  respondTimer()
+    gameTimer();
+    respondTimer()
 };
 
 timerHeader.innerText = "press space to start"
@@ -30,9 +30,22 @@ const gameTimer = () => {
 };
 
 window.addEventListener('keydown', event => {
-  // debugger
-  if (event.key === " ") {
-    gameStart();
-    gameTime = 5;
-  }
+    // debugger
+    if (event.key === " ") {
+        gameStart();
+        gameTime = 5;
+    }
 })
+const updateScore = (playerId, playerScore) => {
+    return fetch(`http://localhost:3000/players/${playerId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            score: playerScore,
+        })
+
+    })
+}

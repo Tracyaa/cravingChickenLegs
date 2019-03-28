@@ -6,32 +6,32 @@ const gameOverText = new PIXI.Text('Times up!', {
 });
 
 const chickenWinText = new PIXI.Text('Vegan WON!', {
-  fontFamily: 'Futura',
-  fontSize: 36,
-  fill: 0x39E39F,
-  align: 'center'
+    fontFamily: 'Futura',
+    fontSize: 36,
+    fill: 0x39E39F,
+    align: 'center'
 })
 
 const skeletonWinText = new PIXI.Text('Meat Lover!', {
-  fontFamily: 'Futura',
-  fontSize: 36,
-  fill: 0xFF5388,
-  align: 'center'
+    fontFamily: 'Futura',
+    fontSize: 36,
+    fill: 0xFF5388,
+    align: 'center'
 })
 
 const winner = () => {
-  if (skeletonTotalScore < chickenTotalScore) {
-    stage.addChild(chickenWinText).position.set(525, 250)
-    timerHeader.innerText = "chicken chicken winner chicken"
-  } else {
-    stage.addChild(skeletonWinText).position.set(525, 250)
-    timerHeader.innerText = "chicken chicken loser chicken"
-  }
+    if (skeletonTotalScore < chickenTotalScore) {
+        stage.addChild(chickenWinText).position.set(525, 250)
+        timerHeader.innerText = "chicken chicken winner chicken"
+    } else {
+        stage.addChild(skeletonWinText).position.set(525, 250)
+        timerHeader.innerText = "chicken chicken loser chicken"
+    }
 }
 
 const gameOver = () => {
     PIXI.loader
-      .load(alpacaSetup)
+        .load(alpacaSetup)
     winner()
     // stage.addChild(gameOverText).position.set(550, 250)
     skeletonSprite.visible = false;
