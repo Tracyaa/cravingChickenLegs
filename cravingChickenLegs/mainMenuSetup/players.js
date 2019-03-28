@@ -48,16 +48,19 @@ bodyTag.addEventListener("submit", (event) => {
     }
 })
 
-const updateScore = (playerId, playerScore) => {
-    return fetch(`http://localhost:3000/players/${playerId}`, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
-            score: playerScore,
-        })
+const getPlayers = () => {
+    return fetch("http://localhost:3000/players")
+        .then(res => res.json())
+}
 
+getPlayers()
+    .then(players => {
+        players.sort(function(a, b) {
+            return b.score - a.score
+        })
+        debugger
     })
+
+function topFivePlayers(array) {
+
 }
