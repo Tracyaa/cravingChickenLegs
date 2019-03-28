@@ -23,7 +23,6 @@ const gameTimer = () => {
         }
     }, 1000);
 };
-
 window.addEventListener('keydown', event => {
   // debugger
   if (event.key === " ") {
