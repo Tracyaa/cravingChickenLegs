@@ -12,23 +12,26 @@ const gameStart = () => {
         .load(chickenSetup)
         .load(drumStickSetup)
 
-    gameTimer();
-};
+    gameTimer()
+    respondTimer()
+}
 
-let gameTime = 60;
+let gameTime = 10;
 const gameTimer = () => {
-    setInterval(function() {
+    const idle = setInterval(function() {
         timerHeader.innerText = `${gameTime} Seconds`;
         gameTime -= 1;
         if (gameTime <= -1) {
+            debugger
             gameOver();
+            clearInterval(idle)
         }
     }, 1000);
 };
-
 window.addEventListener('keydown', event => {
-  // debugger
-  if (event.key === " ") {
-    gameStart();
-  }
+    // debugger
+    if (event.key === " ") {
+        gameStart();
+        let gameTime = 10
+    }
 })

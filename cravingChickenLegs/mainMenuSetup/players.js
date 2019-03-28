@@ -4,9 +4,11 @@ const skeletonForm = document.querySelector(".skeleton-form")
 
 const createChickenPlayer = (chickenObj) => {
     chickenForm.previousElementSibling.innerText = `Player: ${chickenObj.name}`
+    chickenForm.dataset.id = chickenObj.id
 }
 const createSkeletonPlayer = (skeletonObj) => {
     skeletonForm.previousElementSibling.innerText = `Player: ${skeletonObj.name}`
+    skeletonForm.dataset.id = skeletonObj.id
 }
 
 
@@ -45,3 +47,17 @@ bodyTag.addEventListener("submit", (event) => {
             .then(skeletonObj => createSkeletonPlayer(skeletonObj))
     }
 })
+
+const updateScore = (playerId, playerScore) => {
+    return fetch(`http://localhost:3000/players/${playerId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            score: playerScore,
+        })
+
+    })
+}
