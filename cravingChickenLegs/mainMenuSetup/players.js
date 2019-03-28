@@ -58,7 +58,6 @@ getPlayers()
         players.sort(function(a, b) {
             return b.score - a.score
         })
-        debugger
     })
 
 function topFivePlayers(array) {
