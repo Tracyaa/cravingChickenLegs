@@ -1,3 +1,6 @@
+body {
+  background-image: url("https://orig00.deviantart.net/0289/f/2013/130/e/1/tiling_alpaca_background_by_x_burner-d64sshr.png");
+}
 
 .center {
   display: flex;
@@ -5,12 +8,19 @@
   align-items: center;
 }
 
+.box {
+  width: 250px;
+  border: 10px solid white;
+  padding: 10px;
+  margin: 10px;
+}
+
 ul {
   list-style-type: none;
 }
 
 main {
-  background: white;
+  /* background: white; */
   margin: 20px 0;
   padding: 10px;
 }

@@ -1,7 +1,7 @@
 const bodyTag = document.querySelector("body")
 const chickenForm = document.querySelector(".chicken-form")
 const skeletonForm = document.querySelector(".skeleton-form")
-
+const reloadDiv = document.querySelector('div#play-again')
 const createChickenPlayer = (chickenObj) => {
     chickenForm.previousElementSibling.innerText = `Player: ${chickenObj.name}`
     chickenForm.dataset.id = chickenObj.id
@@ -48,7 +48,8 @@ bodyTag.addEventListener("submit", (event) => {
     }
 })
 
-const updateScore = (playerId, playerScore) => {
+const updateScoreApi = (playerId, playerScore) => {
+  // debugger
     return fetch(`http://localhost:3000/players/${playerId}`, {
         method: "PATCH",
         headers: {
@@ -58,6 +59,18 @@ const updateScore = (playerId, playerScore) => {
         body: JSON.stringify({
             score: playerScore,
         })
-
     })
+    .then(resp => resp.json())
+    .then(console.log)
 }
+
+
+
+
+
+
+
+
+
+
+//
