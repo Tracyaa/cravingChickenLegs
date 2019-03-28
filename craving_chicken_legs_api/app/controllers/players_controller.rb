@@ -6,11 +6,17 @@ class PlayersController < ApplicationController
     render json: @players
   end
 
+
   def create
     @player = Player.create(player_params)
     render json: @player
   end
 
+  def updated
+      @player = Player.find(params[:id])
+      @player.update(player_params)
+      render json: @player
+  end
 
   private
 

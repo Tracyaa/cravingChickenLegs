@@ -82,7 +82,7 @@ const chickenTouchSkeleton = () => {
     const chickenSpriteBounds = chickenSprite.getBounds();
     if (chickenSpriteBounds.x + chickenSpriteBounds.width > (skeletonSpriteBounds.x + 28) && chickenSpriteBounds.x < skeletonSpriteBounds.x + (skeletonSpriteBounds.width - 28) && chickenSpriteBounds.y + chickenSpriteBounds.height > (skeletonSpriteBounds.y + 30) && chickenSpriteBounds.y < skeletonSpriteBounds.y + skeletonSpriteBounds.height) {
         chickenTotalScore += 10;
-        chickenScoreBoard.innerText = `Score: ${chickenTotalScore}`
+        chickenScoreBoard.innerText = `${chickenTotalScore}`
         console.log(`chicken ${chickenTotalScore}`);
         chickenSprite.x = 0;
         chickenSprite.y = 500;
