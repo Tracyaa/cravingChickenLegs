@@ -46,25 +46,27 @@ bodyTag.addEventListener("submit", (event) => {
             .then(res => res.json())
             .then(skeletonObj => createSkeletonPlayer(skeletonObj))
     }
+    // debugger
+    // if (chickenObj)
 })
 
 
-const getPlayers = () => {
-    return fetch("http://localhost:3000/players")
-        .then(res => res.json())
-}
-
-getPlayers()
-    .then(players => {
-        players.sort(function(a, b) {
-            return b.score - a.score
-        })
-        debugger
-    })
-
-function topFivePlayers(array) {
-  
-}
+// const getPlayers = () => {
+//     return fetch("http://localhost:3000/players")
+//         .then(res => res.json())
+// }
+//
+// getPlayers()
+//     .then(players => {
+//         players.sort(function(a, b) {
+//             return b.score - a.score
+//         })
+//         debugger
+//     })
+//
+// function topFivePlayers(array) {
+//
+// }
 
 const updateScoreApi = (playerId, playerScore) => {
   // debugger
@@ -92,4 +94,3 @@ const updateScoreApi = (playerId, playerScore) => {
 
 
 //
->>>>>>> e0cba3c51f4cb122fd67afda32d060626866a64b

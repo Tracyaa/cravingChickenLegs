@@ -9,10 +9,11 @@ body {
 }
 
 .box {
-  width: 250px;
-  border: 10px solid white;
+  width: 300px;
+  border: 10px solid gold;
   padding: 10px;
   margin: 10px;
+  background: pink;
 }
 
 ul {
