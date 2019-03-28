@@ -18,11 +18,13 @@ const gameTimer = () => {
         timerHeader.innerText = `${gameTime} Seconds`;
         gameTime -= 1;
         if (gameTime <= -1) {
-            gameOver()
+            gameOver();
+            // debugger
+            updateScoreApi(parseInt(chickenForm.dataset.id), chickenTotalScore)
+            updateScoreApi(parseInt(skeletonForm.dataset.id), skeletonTotalScore)
             clearInterval(idle)
-            updateScore(parseInt(skeletonForm.dataset.id), skeletonTotalScore)
+            // debugger
 
-            updateScore(parseInt(chickenForm.dataset.id), chickenTotalScore)
         }
     }, 1000);
 };
@@ -31,7 +33,7 @@ window.addEventListener('keydown', event => {
     // debugger
     if (event.key === " ") {
         gameStart();
-        gameTime = 15;
+        gameTime = 5;
     }
 })
 const updateScore = (playerId, playerScore) => {

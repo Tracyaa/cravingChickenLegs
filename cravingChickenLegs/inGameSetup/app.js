@@ -7,6 +7,7 @@ const renderer = PIXI.autoDetectRenderer(500, 500, {
   resolution: 1
 });
 const stage = new PIXI.Container();
+const alpacaBgUrl = "https://orig00.deviantart.net/0289/f/2013/130/e/1/tiling_alpaca_background_by_x_burner-d64sshr.png"
 displayDiv.appendChild(renderer.view);
 
 
