@@ -2,6 +2,8 @@ const bodyTag = document.querySelector("body")
 const chickenForm = document.querySelector(".chicken-form")
 const skeletonForm = document.querySelector(".skeleton-form")
 const reloadDiv = document.querySelector('div#play-again')
+const highestScoreDiv = document.querySelector('.highest-score')
+
 const createChickenPlayer = (chickenObj) => {
     chickenForm.previousElementSibling.innerText = `Player: ${chickenObj.name}`
     chickenForm.dataset.id = chickenObj.id
@@ -48,7 +50,14 @@ bodyTag.addEventListener("submit", (event) => {
     }
 })
 
-
+const highScoreHTML = (player) => {
+    return `
+<li data-set="${player.id}">
+    <p>Player: ${player.name}</p>
+    <p>Score: ${player.score}</p>
+    <p>Character: ${player.character}</p>
+</li>`
+}
 const getPlayers = () => {
     return fetch("http://localhost:3000/players")
         .then(res => res.json())
@@ -59,37 +68,28 @@ getPlayers()
         players.sort(function(a, b) {
             return b.score - a.score
         })
-        debugger
+        topFivePlayers(players)
     })
 
-function topFivePlayers(array) {
-  
+const topFivePlayers = (array) => {
+    let topFive = array.slice(0, 5)
+    topFive.forEach(player => {
+        highestScoreDiv.innerHTML += highScoreHTML(player)
+    })
 }
 
 const updateScoreApi = (playerId, playerScore) => {
-  // debugger
+    // debugger
     return fetch(`http://localhost:3000/players/${playerId}`, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
-            score: playerScore,
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                score: playerScore,
+            })
         })
-    })
-    .then(resp => resp.json())
-    .then(console.log)
+        .then(resp => resp.json())
+        .then(console.log)
 }
-
-
-
-
-
-
-
-
-
-
-//
->>>>>>> e0cba3c51f4cb122fd67afda32d060626866a64b
