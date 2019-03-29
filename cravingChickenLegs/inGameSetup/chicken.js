@@ -33,11 +33,12 @@ function chickenSetup() {
     animationLoop();
 };
 
+
 const chickenMovement = () => {
     setInterval(function() {
-        if (rectFront.x >= 64 * 3) rectFront.x = 0;
-        chickenSprite.texture.frame = rectFront;
-        rectFront.x += 64;
+      if (rectFront.x >= 64 * 3) rectFront.x = 0;
+      chickenSprite.texture.frame = rectFront;
+      rectFront.x += 64;
     }, 150);
 };
 
@@ -45,17 +46,17 @@ const chickenMovement = () => {
 const changeChickenDirection = (key) => {
     const texture = PIXI.loader.resources["chicken"].texture;
     if (key === 'd') {
-        chickenSprite._texture.frame.y = 64;
-        chickenSprite._texture.frame.x = 0;
+      chickenSprite._texture.frame.y = 64;
+      chickenSprite._texture.frame.x = 0;
     } else if (key === 'a') {
-        chickenSprite._texture.frame.y = 192;
-        chickenSprite._texture.frame.x = 0;
+      chickenSprite._texture.frame.y = 192;
+      chickenSprite._texture.frame.x = 0;
     } else if (key === 's') {
-        chickenSprite._texture.frame.y = 128;
-        chickenSprite._texture.frame.x = 0;
+      chickenSprite._texture.frame.y = 128;
+      chickenSprite._texture.frame.x = 0;
     } else if (key === 'w') {
-        chickenSprite._texture.frame.y = 0;
-        chickenSprite._texture.frame.x = 0;
+      chickenSprite._texture.frame.y = 0;
+      chickenSprite._texture.frame.x = 0;
     }
 };
 
@@ -87,7 +88,7 @@ const chickenTouchSkeleton = () => {
         console.log(`chicken ${chickenTotalScore}`);
         chickenSprite.x = 0;
         chickenSprite.y = 500;
-    }
+    };
 };
 
 
