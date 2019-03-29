@@ -19,6 +19,13 @@ const skeletonWinText = new PIXI.Text('Meat Lover!', {
     align: 'center'
 })
 
+const topPlayersText = new PIXI.Text('Meat Lover', {
+    fontFamily: 'Futura',
+    fontSize: 36,
+    fill: 0xFF5388,
+    align: 'center'
+})
+
 const winner = () => {
     if (skeletonTotalScore < chickenTotalScore) {
         stage.addChild(chickenWinText).position.set(525, 250)
@@ -38,7 +45,6 @@ const gameOver = () => {
     chickenSprite.visible = false;
     drumStick.visible = false;
     reloadDiv.innerHTML = `<input type="button" value="Play again?" onClick="document.location.reload(true)" class="btn btn-warning">`
-
 
 };
 

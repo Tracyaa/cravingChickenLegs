@@ -15,6 +15,13 @@ body {
   margin: 10px;
   background: pink;
 }
+.score-box {
+  width: 300px;
+  border: 10px solid gold;
+  padding: 10px;
+  margin: 10px;
+  background: lightblue;
+}
 
 ul {
   list-style-type: none;

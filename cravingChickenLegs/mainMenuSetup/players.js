@@ -2,6 +2,8 @@ const bodyTag = document.querySelector("body")
 const chickenForm = document.querySelector(".chicken-form")
 const skeletonForm = document.querySelector(".skeleton-form")
 const reloadDiv = document.querySelector('div#play-again')
+const highestScoreDiv = document.querySelector('.highest-score')
+
 const createChickenPlayer = (chickenObj) => {
     chickenForm.previousElementSibling.innerText = `Player: ${chickenObj.name}`
     chickenForm.dataset.id = chickenObj.id
@@ -50,47 +52,47 @@ bodyTag.addEventListener("submit", (event) => {
     // if (chickenObj)
 })
 
-
-// const getPlayers = () => {
-//     return fetch("http://localhost:3000/players")
-//         .then(res => res.json())
-// }
-//
-// getPlayers()
-//     .then(players => {
-//         players.sort(function(a, b) {
-//             return b.score - a.score
-//         })
-//         debugger
-//     })
-//
-// function topFivePlayers(array) {
-//
-// }
-
-const updateScoreApi = (playerId, playerScore) => {
-  // debugger
-    return fetch(`http://localhost:3000/players/${playerId}`, {
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
-            score: playerScore,
-        })
-    })
-    .then(resp => resp.json())
-    .then(console.log)
+const highScoreHTML = (player) => {
+    return `
+<ul>
+  <li data-set="${player.id}">
+      <b>${player.character}</b> ${player.name}
+      Score: ${player.score}
+  </li>
+</ul>`
+}
+const getPlayers = () => {
+    return fetch("http://localhost:3000/players")
+        .then(res => res.json())
 }
 
+getPlayers()
+    .then(players => {
+        players.sort(function(a, b) {
+            return b.score - a.score
+        })
+        topFivePlayers(players)
+    })
 
+const topFivePlayers = (array) => {
+    let topFive = array.slice(0, 5)
+    topFive.forEach(player => {
+        highestScoreDiv.innerHTML += highScoreHTML(player)
+    })
+}
 
-
-
-
-
-
-
-
-//
+const updateScoreApi = (playerId, playerScore) => {
+    // debugger
+    return fetch(`http://localhost:3000/players/${playerId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                score: playerScore,
+            })
+        })
+        .then(resp => resp.json())
+        .then(console.log)
+}
