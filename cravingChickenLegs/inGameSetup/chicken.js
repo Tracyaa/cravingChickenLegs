@@ -43,34 +43,36 @@ const chickenMovement = () => {
 
 const changeChickenDirection = (key) => {
   const texture = PIXI.loader.resources["chicken"].texture;
-  if (key === 'd') {
+
+  if (key === 68) {
     chickenSprite._texture.frame.y = 64;
     chickenSprite._texture.frame.x = 0;
-  } else if (key === 'a') {
+  } else if (key === 65) {
     chickenSprite._texture.frame.y = 192;
     chickenSprite._texture.frame.x = 0;
-  } else if (key === 's') {
+  } else if (key === 83) {
     chickenSprite._texture.frame.y = 128;
     chickenSprite._texture.frame.x = 0;
-  } else if (key === 'w') {
+  } else if (key === 87) {
     chickenSprite._texture.frame.y = 0;
     chickenSprite._texture.frame.x = 0;
   }
 };
 
 window.addEventListener('keydown', e => {
+  // debugger
   if (!!chickenSprite) {
-    if (e.key === 'd' && chickenSprite.x < 740) {
-      changeChickenDirection('d')
+    if (e.keyCode === 68 && chickenSprite.x < 740) {
+      changeChickenDirection(68)
       chickenSprite.x += chickenSprite.vx
-    } else if (e.key === 'a' && chickenSprite.x > -20) {
-      changeChickenDirection('a')
+    } else if (e.keyCode === 65 && chickenSprite.x > -20) {
+      changeChickenDirection(65)
       chickenSprite.x -= chickenSprite.vx
-    } else if (e.key === 's' && chickenSprite.y < 520) {
-      changeChickenDirection('s')
+    } else if (e.keyCode === 83 && chickenSprite.y < 520) {
+      changeChickenDirection(83)
       chickenSprite.y += chickenSprite.vy
-    } else if (e.key === 'w' && chickenSprite.y > -20) {
-      changeChickenDirection('w')
+    } else if (e.keyCode === 87 && chickenSprite.y > -20) {
+      changeChickenDirection(87)
       chickenSprite.y -= chickenSprite.vy
     }
     chickenTouchSkeleton()
