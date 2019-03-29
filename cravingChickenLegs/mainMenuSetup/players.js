@@ -52,11 +52,14 @@ bodyTag.addEventListener("submit", (event) => {
 
 const highScoreHTML = (player) => {
     return `
-<li data-set="${player.id}">
-    <p>Player: ${player.name}</p>
-    <p>Score: ${player.score}</p>
-    <p>Character: ${player.character}</p>
-</li>`
+<ul
+    <li data-set="${player.id}">
+        <p>Player: ${player.name}</p>
+        <p>Score: ${player.score}</p>
+        <p>Character: ${player.character}</p>
+    </li>
+    <hr>
+</ul>`
 }
 const getPlayers = () => {
     return fetch("http://localhost:3000/players")

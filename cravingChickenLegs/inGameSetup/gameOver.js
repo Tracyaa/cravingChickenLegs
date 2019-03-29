@@ -41,14 +41,3 @@ const gameOver = () => {
 
 
 };
-
-// window.addEventListener("keydown", (event) => {
-//         if (event.key === "r") {
-//             const skeletonPoints = parseInt(skeletonForm.nextElementSibling.nextElementSibling.innerText);
-//
-//             const chickenPoints = parseInt(chickenForm.nextElementSibling.nextElementSibling.innerText);
-//             debugger
-//             updateScore(skeletonForm.id, skeletonPoints)
-//             updateScore(chickenForm.id, chickenPoints)
-//         })
-// }
