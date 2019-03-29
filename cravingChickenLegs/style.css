@@ -1,47 +1,74 @@
 body {
-  background-image: url("https://orig00.deviantart.net/0289/f/2013/130/e/1/tiling_alpaca_background_by_x_burner-d64sshr.png");
+    background-image: url("https://orig00.deviantart.net/0289/f/2013/130/e/1/tiling_alpaca_background_by_x_burner-d64sshr.png");
 }
 
 .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.highest-score {
+    position: relative;
+    /* left: -175px; */
+    left: -50px;
+    bottom: -50px;
+    background-color: white;
+    width: 250px;
+    border: 10px solid white;
+    padding: 10px;
+    margin: 10px
+}
+
+.div-to-left {
+    position: relative;
+    /* left: -175px; */
+    left: -150px;
+}
+
+.text-box {
+    position: relative;
+    left: -30px;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 .box {
-  width: 300px;
-  border: 10px solid gold;
-  padding: 10px;
-  margin: 10px;
-  background: pink;
-}
-.score-box {
-  width: 300px;
-  border: 10px solid gold;
-  padding: 10px;
-  margin: 10px;
-  background: lightblue;
+    width: 250px;
+    border: 10px solid gold;
+    padding: 10px;
+    margin: 10px;
+    background: pink;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 main {
-  /* background: white; */
-  margin: 20px 0;
-  padding: 10px;
+    /* background: white; */
+    margin: 20px 0;
+    padding: 10px;
 }
 
 .flex-center {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .inline-block-center {
-  text-align: center;
+    text-align: center;
 }
+
 .inline-block-center div {
-  display: inline-block;
-  text-align: left;
+    display: inline-block;
+    text-align: left;
 }

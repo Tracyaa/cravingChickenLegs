@@ -10,19 +10,20 @@ const gameStart = () => {
     respondTimer()
 };
 
-timerHeader.innerText = "press space to start"
+timerDiv.innerHTML = `<h2 class="center blink_me">press space to start</h2>`
 
-let gameTime = 5;
+let gameTime = 10;
 const gameTimer = () => {
     const idle = setInterval(function() {
-        timerHeader.innerText = `${gameTime} Seconds`;
+        timerDiv.innerHTML = `<h2>${gameTime} Seconds</h2>`;
         gameTime -= 1;
         if (gameTime <= -1) {
-            gameOver();
-            // debugger
+          reloadDiv.innerHTML = `<input type="button" value="Play again?" onClick="document.location.reload(true)" class="btn btn-warning">`
             updateScoreApi(parseInt(chickenForm.dataset.id), chickenTotalScore)
             updateScoreApi(parseInt(skeletonForm.dataset.id), skeletonTotalScore)
             clearInterval(idle)
+            gameOver();
+            // debugger
             // debugger
 
         }
@@ -30,12 +31,18 @@ const gameTimer = () => {
 };
 
 window.addEventListener('keydown', event => {
-    // debugger
+  if (isGameStart === false) {
     if (event.key === " ") {
         gameStart();
-        gameTime = 5;
+        gameTime = 10;
+        isGameStart = true;
     }
+  }
 })
+
+
+
+
 const updateScore = (playerId, playerScore) => {
     return fetch(`http://localhost:3000/players/${playerId}`, {
         method: "PATCH",

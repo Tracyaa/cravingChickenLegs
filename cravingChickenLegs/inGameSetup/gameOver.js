@@ -19,42 +19,32 @@ const skeletonWinText = new PIXI.Text('Meat Lover!', {
     align: 'center'
 })
 
-const topPlayersText = new PIXI.Text('Meat Lover', {
+const tieText = new PIXI.Text('Alpaca saved \n the day again!', {
     fontFamily: 'Futura',
     fontSize: 36,
-    fill: 0xFF5388,
+    fill: 0xF6F1F1,
     align: 'center'
 })
 
 const winner = () => {
     if (skeletonTotalScore < chickenTotalScore) {
-        stage.addChild(chickenWinText).position.set(525, 250)
-        timerHeader.innerText = "chicken chicken winner chicken"
+      stage.addChild(chickenWinText).position.set(500, 250)
+      timerDiv.innerHTML = `<h2>chicken chicken winner chicken</h2>`
+    } else if (skeletonTotalScore < chickenTotalScore){
+      stage.addChild(skeletonWinText).position.set(500, 250)
+      timerDiv.innerHTML = `<h2>chicken chicken loser chicken</h2>`
     } else {
-        stage.addChild(skeletonWinText).position.set(525, 250)
-        timerHeader.innerText = "chicken chicken loser chicken"
+      stage.addChild(tieText).position.set(500, 250)
+      timerDiv.innerHTML = `<h2>chicken chicken what's the point</h2>`
     }
 }
 
 const gameOver = () => {
-    PIXI.loader
-        .load(alpacaSetup)
-    winner()
-    // stage.addChild(gameOverText).position.set(550, 250)
-    skeletonSprite.visible = false;
-    chickenSprite.visible = false;
-    drumStick.visible = false;
-    reloadDiv.innerHTML = `<input type="button" value="Play again?" onClick="document.location.reload(true)" class="btn btn-warning">`
-
+  skeletonSprite.visible = false;
+  chickenSprite.visible = false;
+  drumStick.visible = false;
+  PIXI.loader
+    .load(alpacaSetup)
+  winner()
+  // stage.addChild(gameOverText).position.set(550, 250)
 };
-
-// window.addEventListener("keydown", (event) => {
-//         if (event.key === "r") {
-//             const skeletonPoints = parseInt(skeletonForm.nextElementSibling.nextElementSibling.innerText);
-//
-//             const chickenPoints = parseInt(chickenForm.nextElementSibling.nextElementSibling.innerText);
-//             debugger
-//             updateScore(skeletonForm.id, skeletonPoints)
-//             updateScore(chickenForm.id, chickenPoints)
-//         })
-// }
