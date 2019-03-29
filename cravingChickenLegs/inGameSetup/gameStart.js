@@ -11,8 +11,8 @@ const gameStart = () => {
 
 
 
-let gameTime = 60;
 const gameTimer = () => {
+  let gameTime = 10;
   const idle = setInterval(function() {
     timerDiv.innerHTML = `<h2>${gameTime} Seconds</h2>`;
     gameTime -= 1;
@@ -32,7 +32,7 @@ startGameDiv.innerHTML = `<h2 class="center blink_me">click here to start</h2>`
 startGameDiv.addEventListener('click', event => {
   if (isGameStart === false) {
     gameStart();
-    gameTime = 60;
+    musicIframe.src = "musics/fight.ogg";
     isGameStart = true;
   }
 });

@@ -30,7 +30,7 @@ const winner = () => {
     if (skeletonTotalScore < chickenTotalScore) {
       stage.addChild(chickenWinText).position.set(500, 250)
       timerDiv.innerHTML = `<h2>chicken chicken winner chicken</h2>`
-    } else if (skeletonTotalScore < chickenTotalScore){
+    } else if (skeletonTotalScore > chickenTotalScore){
       stage.addChild(skeletonWinText).position.set(500, 250)
       timerDiv.innerHTML = `<h2>chicken chicken loser chicken</h2>`
     } else {
@@ -40,11 +40,13 @@ const winner = () => {
 }
 
 const gameOver = () => {
+  musicIframe.src = "musics/Lively Meadow Victory Fanfare.mp3"
   skeletonSprite.visible = false;
   chickenSprite.visible = false;
   drumStick.visible = false;
   PIXI.loader
     .load(alpacaSetup)
   winner()
+  musicIframe.src = "musics/Lively Meadow Victory Fanfare.mp3";
   // stage.addChild(gameOverText).position.set(550, 250)
 };
