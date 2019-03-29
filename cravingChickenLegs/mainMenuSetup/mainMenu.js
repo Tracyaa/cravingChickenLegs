@@ -22,3 +22,8 @@ function alpacaSetup() {
     alpaca.interactive = true;
     stage.addChild(alpaca);
 };
+
+
+
+
+//
