@@ -13,6 +13,7 @@ const gameStart = () => {
 
 let gameTime = 60;
 const gameTimer = () => {
+
     const idle = setInterval(function() {
         timerDiv.innerHTML = `<h2>${gameTime} Seconds</h2>`;
         gameTime -= 1;
@@ -26,15 +27,20 @@ const gameTimer = () => {
     }, 1000);
 };
 
-window.addEventListener('keydown', event => {
+startGameDiv.innerHTML = `<h2 class="center blink_me">click here to start</h2>`
+
+startGameDiv.addEventListener('click', event => {
     if (isGameStart === false) {
-        if (event.key === " ") {
-            gameStart();
-            gameTime = 10;
-            isGameStart = true;
-        }
+        gameStart();
+        gameTime = 60;
+        isGameStart = true;
     }
-})
+});
+
+
+
+
+
 
 const updateScore = (playerId, playerScore) => {
     return fetch(`http://localhost:3000/players/${playerId}`, {
@@ -47,4 +53,4 @@ const updateScore = (playerId, playerScore) => {
             score: playerScore,
         })
     })
-}
+};
