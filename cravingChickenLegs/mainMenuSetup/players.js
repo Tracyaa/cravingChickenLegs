@@ -54,12 +54,11 @@ bodyTag.addEventListener("submit", (event) => {
 const highScoreHTML = (player) => {
     return `
   <ul>
-    <li data-set="${player.id}">
+    <li class="player-li" data-set="${player.id}">
         <h4>${player.name}</h4>
         <h5>Score: ${player.score}</h5>
         <h6>${player.character}</h6>
     </li>
-    <hr>
   </ul>`
 }
 const getPlayers = () => {

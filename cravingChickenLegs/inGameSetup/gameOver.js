@@ -19,7 +19,7 @@ const skeletonWinText = new PIXI.Text('Meat Lover!', {
     align: 'center'
 })
 
-const tieText = new PIXI.Text('Alpaca saved \n the day again!', {
+const tieText = new PIXI.Text('Alpaca saves \n the day again!', {
     fontFamily: 'Futura',
     fontSize: 36,
     fill: 0xF6F1F1,
@@ -28,23 +28,23 @@ const tieText = new PIXI.Text('Alpaca saved \n the day again!', {
 
 const winner = () => {
     if (skeletonTotalScore < chickenTotalScore) {
-      stage.addChild(chickenWinText).position.set(500, 250)
-      timerDiv.innerHTML = `<h2>chicken chicken winner chicken</h2>`
-    } else if (skeletonTotalScore < chickenTotalScore){
-      stage.addChild(skeletonWinText).position.set(500, 250)
-      timerDiv.innerHTML = `<h2>chicken chicken loser chicken</h2>`
+        stage.addChild(chickenWinText).position.set(500, 250)
+        timerDiv.innerHTML = `<h2>Chicken Chicken Winner Chicken!</h2>`
+    } else if (skeletonTotalScore < chickenTotalScore) {
+        stage.addChild(skeletonWinText).position.set(500, 250)
+        timerDiv.innerHTML = `<h2>Chicken Chicken Loser Chicken!</h2>`
     } else {
-      stage.addChild(tieText).position.set(500, 250)
-      timerDiv.innerHTML = `<h2>chicken chicken what's the point</h2>`
+        stage.addChild(tieText).position.set(500, 250)
+        timerDiv.innerHTML = `<h2>Chicken Chicken What's the Point!?</h2>`
     }
 }
 
 const gameOver = () => {
-  skeletonSprite.visible = false;
-  chickenSprite.visible = false;
-  drumStick.visible = false;
-  PIXI.loader
-    .load(alpacaSetup)
-  winner()
-  // stage.addChild(gameOverText).position.set(550, 250)
+    skeletonSprite.visible = false;
+    chickenSprite.visible = false;
+    drumStick.visible = false;
+    PIXI.loader
+        .load(alpacaSetup)
+    winner()
+    // stage.addChild(gameOverText).position.set(550, 250)
 };
