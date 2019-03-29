@@ -12,7 +12,7 @@ const gameStart = () => {
 
 timerHeader.innerText = "press space to start"
 
-let gameTime = 5;
+let gameTime = 60;
 const gameTimer = () => {
     const idle = setInterval(function() {
         timerHeader.innerText = `${gameTime} Seconds`;
@@ -33,7 +33,7 @@ window.addEventListener('keydown', event => {
     // debugger
     if (event.key === " ") {
         gameStart();
-        gameTime = 5;
+        gameTime = 60;
     }
 })
 const updateScore = (playerId, playerScore) => {
