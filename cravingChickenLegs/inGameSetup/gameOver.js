@@ -19,7 +19,7 @@ const skeletonWinText = new PIXI.Text('Meat Lover!', {
     align: 'center'
 })
 
-const tieText = new PIXI.Text('Alpaca saved \n the day again!', {
+const tieText = new PIXI.Text('Alpaca saves \n the day again!', {
     fontFamily: 'Futura',
     fontSize: 36,
     fill: 0xF6F1F1,
@@ -34,8 +34,8 @@ const winner = () => {
       stage.addChild(skeletonWinText).position.set(500, 250)
       timerDiv.innerHTML = `<h2>chicken chicken loser chicken</h2>`
     } else {
-      stage.addChild(tieText).position.set(500, 250)
-      timerDiv.innerHTML = `<h2>chicken chicken what's the point</h2>`
+        stage.addChild(tieText).position.set(500, 250)
+        timerDiv.innerHTML = `<h2>Chicken Chicken What's the Point!?</h2>`
     }
 }
 

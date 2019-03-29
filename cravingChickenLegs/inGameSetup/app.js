@@ -1,10 +1,5 @@
 // PIXI.utils.sayHello();
-// var myMusic;
-// myMusic = new Audio("../images/WindsOfStories.mp3");
-// myMusic.play();
-
 const displayDiv = document.querySelector('#display')
-
 const timerDiv = document.querySelector("div#top-text")
 const renderer = PIXI.autoDetectRenderer(500, 500, {
   transparent: true,
@@ -16,7 +11,6 @@ const musicDiv = document.querySelector('.music')
 const musicIframe = document.querySelector('iframe')
 
 displayDiv.appendChild(renderer.view);
-
 
 let isGameStart = false;
 

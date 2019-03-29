@@ -6,18 +6,18 @@ let drumStick;
 // }
 
 function drumStickSetup() {
-    stage.interactive = true;
+  stage.interactive = true;
 
-    drumStick = new PIXI.Sprite(PIXI.loader.resources["drumStick"].texture);
+  drumStick = new PIXI.Sprite(PIXI.loader.resources["drumStick"].texture);
 
-    drumStick.x = Math.floor(Math.random() * (renderer.width - 25));
-    drumStick.y = Math.floor(Math.random() * (renderer.height - 25));
+  drumStick.x = Math.floor(Math.random() * (renderer.width - 25));
+  drumStick.y = Math.floor(Math.random() * (renderer.height - 25));
 
-    drumStick.interactive = true;
-    stage.addChild(drumStick);
+  drumStick.interactive = true;
+  stage.addChild(drumStick);
 
-    // drumStick.rotation = 0;
-    animationLeg();
+  // drumStick.rotation = 0;
+  animationLeg();
 };
 
 function animationLeg() {
@@ -37,11 +37,11 @@ const randomRelocate = () => {
 let respondTime = 10; // seconds
 const respondTimer = () => {
   const idle = setInterval(function() {
-      respondTime -= 1;
-      if (respondTime <= -1) {
-          randomRelocate();
-          respondTime = 10;
-      }
+    respondTime -= 1;
+    if (respondTime <= -1) {
+      randomRelocate();
+      respondTime = 10;
+    }
   }, 1000);
 }
 
