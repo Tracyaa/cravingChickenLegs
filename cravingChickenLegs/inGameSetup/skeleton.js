@@ -56,8 +56,8 @@ const changeDirection = (key) => {
     }
 }
 
-
 window.addEventListener('keydown', event => {
+  if (!!skeletonSprite) {
     ateDrumpStick()
     if (event.key === 'ArrowRight' && skeletonSprite.x < 740) {
         changeDirection('ArrowRight')
@@ -72,20 +72,27 @@ window.addEventListener('keydown', event => {
         changeDirection('ArrowUp')
         skeletonSprite.y -= skeletonSprite.vy
     }
+  };
 });
 
+
 const ateDrumpStick = () => {
-    const legBounds = drumStick.getBounds();
-    const skeletonSpriteBounds = skeletonSprite.getBounds();
+    if (!!drumStick && !!skeletonSprite) {
+      const legBounds = drumStick.getBounds();
+      const skeletonSpriteBounds = skeletonSprite.getBounds();
+
+    // const legBounds = drumStick.getBounds();
+    // const skeletonSpriteBounds = skeletonSprite.getBounds();
     // debugger
-    if (legBounds.x + (legBounds.width + 14) > (skeletonSpriteBounds.x + 28) && legBounds.x < skeletonSpriteBounds.x + (skeletonSpriteBounds.width - 28) && legBounds.y + (legBounds.height + 14) > (skeletonSpriteBounds.y + 30) && legBounds.y < skeletonSpriteBounds.y + skeletonSpriteBounds.height) {
+      if (legBounds.x + (legBounds.width + 14) > (skeletonSpriteBounds.x + 28) && legBounds.x < skeletonSpriteBounds.x + (skeletonSpriteBounds.width - 28) && legBounds.y + (legBounds.height + 14) > (skeletonSpriteBounds.y + 30) && legBounds.y < skeletonSpriteBounds.y + skeletonSpriteBounds.height) {
         //remove drumStick, load new one, add point to total.
         skeletonTotalScore += 10;
-        skeletonScoreBoard.innerText = `${skeletonTotalScore}`
+        skeletonScoreBoard.innerText = `Score: ${skeletonTotalScore}`
         console.log(skeletonTotalScore);
         randomRelocate();
         respondTime = 10;
     };
+  }
 };
 
 // function inspectSprite(skeletonSprite) {

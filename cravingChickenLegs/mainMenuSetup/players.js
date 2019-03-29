@@ -3,7 +3,6 @@ const chickenForm = document.querySelector(".chicken-form")
 const skeletonForm = document.querySelector(".skeleton-form")
 const reloadDiv = document.querySelector('div#play-again')
 const highestScoreDiv = document.querySelector('.highest-score')
-
 const createChickenPlayer = (chickenObj) => {
     chickenForm.previousElementSibling.innerText = `Player: ${chickenObj.name}`
     chickenForm.dataset.id = chickenObj.id
@@ -48,18 +47,20 @@ bodyTag.addEventListener("submit", (event) => {
             .then(res => res.json())
             .then(skeletonObj => createSkeletonPlayer(skeletonObj))
     }
+    // debugger
+    // if (chickenObj)
 })
 
 const highScoreHTML = (player) => {
     return `
-<ul
+  <ul>
     <li data-set="${player.id}">
-        <p>Player: ${player.name}</p>
-        <p>Score: ${player.score}</p>
-        <p>Character: ${player.character}</p>
+        <h4>${player.name}</h4>
+        <h5>Score: ${player.score}</h5>
+        <h6>${player.character}</h6>
     </li>
     <hr>
-</ul>`
+  </ul>`
 }
 const getPlayers = () => {
     return fetch("http://localhost:3000/players")

@@ -1,7 +1,8 @@
 PIXI.utils.sayHello();
 
 const displayDiv = document.querySelector('#display')
-const timerHeader = document.querySelector("#timer")
+
+const timerDiv = document.querySelector("div#top-text")
 const renderer = PIXI.autoDetectRenderer(500, 500, {
   transparent: true,
   resolution: 1
@@ -10,7 +11,7 @@ const stage = new PIXI.Container();
 const alpacaBgUrl = "https://orig00.deviantart.net/0289/f/2013/130/e/1/tiling_alpaca_background_by_x_burner-d64sshr.png"
 displayDiv.appendChild(renderer.view);
 
-
+let isGameStart = false;
 // const loadImages = () => {
 PIXI.loader
   .add("mainMenuBg", "images/9046OT_06_02.png")
@@ -19,6 +20,7 @@ PIXI.loader
   .add("drumStick", "images/Pataepollo.png")
   .add("chicken", "images/chicken.png")
   .add("greenBg", "images/background1.png")
+  .add("ahhh", "images/alpacaAhhh.png")
 // }
 
 

@@ -60,7 +60,7 @@ const changeChickenDirection = (key) => {
 };
 
 window.addEventListener('keydown', e => {
-    // event.preventDefault();
+  if (!!chickenSprite) {
     if (e.key === 'd' && chickenSprite.x < 740) {
         changeChickenDirection('d')
         chickenSprite.x += chickenSprite.vx
@@ -75,6 +75,7 @@ window.addEventListener('keydown', e => {
         chickenSprite.y -= chickenSprite.vy
     }
     chickenTouchSkeleton()
+  }
 });
 
 const chickenTouchSkeleton = () => {
@@ -82,7 +83,7 @@ const chickenTouchSkeleton = () => {
     const chickenSpriteBounds = chickenSprite.getBounds();
     if (chickenSpriteBounds.x + chickenSpriteBounds.width > (skeletonSpriteBounds.x + 28) && chickenSpriteBounds.x < skeletonSpriteBounds.x + (skeletonSpriteBounds.width - 28) && chickenSpriteBounds.y + chickenSpriteBounds.height > (skeletonSpriteBounds.y + 30) && chickenSpriteBounds.y < skeletonSpriteBounds.y + skeletonSpriteBounds.height) {
         chickenTotalScore += 10;
-        chickenScoreBoard.innerText = `${chickenTotalScore}`
+        chickenScoreBoard.innerText = `Score: ${chickenTotalScore}`
         console.log(`chicken ${chickenTotalScore}`);
         chickenSprite.x = 0;
         chickenSprite.y = 500;

@@ -10,7 +10,9 @@ body {
 
 .highest-score {
     position: relative;
-    left: -175px;
+    /* left: -175px; */
+    left: -50px;
+    bottom: -50px;
     background-color: white;
     width: 250px;
     border: 10px solid white;
@@ -18,14 +20,30 @@ body {
     margin: 10px
 }
 
+.div-to-left {
+    position: relative;
+    /* left: -175px; */
+    left: -150px;
+}
+
 .text-box {
     position: relative;
     left: -30px;
 }
 
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 .box {
     width: 250px;
-    border: 10px solid white;
+    border: 10px solid gold;
     padding: 10px;
     margin: 10px;
     background: pink;

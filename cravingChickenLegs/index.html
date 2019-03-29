@@ -9,18 +9,13 @@
 </head>
 
 <body>
-    <main class="flex-center">
-        <div class="center">
-            <h2 id="timer"></h2>
-        </div>
-    </main>
-    <main class="flex-center">
+    <main class="flex-center div-to-left ">
         <div align="bottom" class="">
         </div>
 
         <div class="center">
             <div class="highest-score">
-                <h3>High Score</h3>
+                <h3 align="center">Top 5 Player</h3>
                 <ul>
 
                 </ul>
@@ -34,15 +29,22 @@
                             <input class="text-box" type="text" name="name" value="">
                             <input type="hidden" name="score">
                             <input type="hidden" name="character" value="chicken">
+
                     <li><input type="submit" class="btn btn-info"></li>
                     </form>
-                    <h2>Score:</h2>
+                    <h2 id="chicken-score"></h2>
                     <h2 class="chicken-score"></h2>
                     </li>
                 </ul>
             </div>
             <div id="display" class=".flex-center ">
+              <main class="flex-center">
+                  <div id="top-text">
+
+                  </div>
+              </main>
             </div>
+
             <div class="box">
                 <ul>
                     <h2>Skeleton</h2>
@@ -53,7 +55,7 @@
                         <input type="hidden" name="character" value="skeleton">
                         <li><input type="submit" class="btn btn-info"></li>
                     </form>
-                    <h2>Score:</h2>
+                    <h2 id="skeleton-score"></h2>
                     <h2 class="skeleton-score"></h2>
                 </ul>
             </div>
