@@ -18,7 +18,7 @@ const gameTimer = () => {
         timerDiv.innerHTML = `<h2>${gameTime} Seconds</h2>`;
         gameTime -= 1;
         if (gameTime <= -1) {
-          reloadDiv.innerHTML = `<input type="button" value="Play again?" onClick="document.location.reload(true)" class="btn btn-warning">`
+            reloadDiv.innerHTML = `<input class="play-again"type="button" value="Play again?" onClick="document.location.reload(true)" class="btn btn-warning">`
             updateScoreApi(parseInt(chickenForm.dataset.id), chickenTotalScore)
             updateScoreApi(parseInt(skeletonForm.dataset.id), skeletonTotalScore)
             clearInterval(idle)
@@ -31,13 +31,13 @@ const gameTimer = () => {
 };
 
 window.addEventListener('keydown', event => {
-  if (isGameStart === false) {
-    if (event.key === " ") {
-        gameStart();
-        gameTime = 10;
-        isGameStart = true;
+    if (isGameStart === false) {
+        if (event.key === " ") {
+            gameStart();
+            gameTime = 10;
+            isGameStart = true;
+        }
     }
-  }
 })
 
 

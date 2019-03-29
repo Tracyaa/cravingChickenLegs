@@ -2,6 +2,32 @@ body {
     background-image: url("https://orig00.deviantart.net/0289/f/2013/130/e/1/tiling_alpaca_background_by_x_burner-d64sshr.png");
 }
 
+.play-again {
+    background-color: rgb(75, 141, 164);
+    color: white;
+    padding: 15px 32px;
+    font-size: 28px;
+    border-radius: 10px;
+}
+
+.play-again:hover {
+    background: rgb(248, 208, 52);
+}
+
+.submit-button {
+    background-color: rgb(75, 141, 164);
+    color: white;
+    padding: 10px 24px;
+    font-size: 24px;
+    margin-top: 15px;
+    left: 10px;
+    border-radius: 10px;
+}
+
+.submit-button:hover {
+    background: #a44b60;
+}
+
 .center {
     display: flex;
     justify-content: center;
@@ -29,16 +55,17 @@ body {
 .text-box {
     position: relative;
     left: -30px;
+    height: 30px;
 }
 
 .blink_me {
-  animation: blinker 1s linear infinite;
+    animation: blinker 1s linear infinite;
 }
 
 @keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+    50% {
+        opacity: 0;
+    }
 }
 
 .box {
@@ -71,4 +98,16 @@ main {
 .inline-block-center div {
     display: inline-block;
     text-align: left;
+}
+
+.player-li {
+    border-style: solid;
+    border-width: 5px;
+    padding: 5px;
+    position: relative;
+    left: -20px;
+}
+
+.top-five {
+    border-bottom: solid
 }
