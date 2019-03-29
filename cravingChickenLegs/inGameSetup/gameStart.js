@@ -37,13 +37,14 @@ window.addEventListener('keydown', event => {
 })
 
 const updateScore = (playerId, playerScore) => {
-        return fetch(`http://localhost:3000/players/${playerId}`, {
-                    method: "PATCH",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
-                    },
-                    body: JSON.stringify({
-                        score: playerScore,
-                    })
-                }
+    return fetch(`http://localhost:3000/players/${playerId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            score: playerScore,
+        })
+    })
+}
