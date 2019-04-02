@@ -25,8 +25,8 @@ function chickenSetup() {
   chickenSprite.scale.set(1.3, 1.3);
   chickenSprite.x = 0;
   chickenSprite.y = 500;
-  chickenSprite.vx = 20;
-  chickenSprite.vy = 20;
+  chickenSprite.vx = 25;
+  chickenSprite.vy = 25;
 
   chickenSprite.interactive = true;
   stage.addChild(chickenSprite);
@@ -60,7 +60,6 @@ const changeChickenDirection = (key) => {
 };
 
 window.addEventListener('keydown', e => {
-  // debugger
   if (!!chickenSprite) {
     if (e.keyCode === 68 && chickenSprite.x < 740) {
       changeChickenDirection(68)
