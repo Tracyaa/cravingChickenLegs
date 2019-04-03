@@ -1,7 +1,6 @@
 var mainMenuBg;
 var alpaca;
 
-
 function mainMenuBgSetup() {
     stage.interactive = true;
 
@@ -23,3 +22,8 @@ function alpacaSetup() {
     alpaca.interactive = true;
     stage.addChild(alpaca);
 };
+
+
+
+
+//

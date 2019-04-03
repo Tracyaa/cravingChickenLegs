@@ -9,7 +9,6 @@ What began as a simple Javascript game project quickly turned into a gaming fias
 5. Open links in browser and enjoy!
 
 ## Rules
-
 This is a points game, the skeleton(one player) gets 10 points for every chicken leg it gets, and the chicken(other player) gets 10 points every time it touches the skeleton. Player with the most point wins, and a chance to get on the leaderboard.
 
 Skeleton-
@@ -23,6 +22,7 @@ Click flashing prompt to start the game!
 Tips-
 You'll notice that the chicken leg relocates randomly on the screen every ten seconds adding a bit of unpredictability. You will also notice that since two players are sharing the same keyboard, that both players cannot hold down a direction key at the same time and move, you must tap continuously to move both characters.
 
+1. clone the 
 
 
 ```javascript```
