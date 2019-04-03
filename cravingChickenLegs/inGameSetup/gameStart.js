@@ -1,12 +1,12 @@
 const startGameDiv = document.querySelector("#top-text")
 const gameStart = () => {
-  PIXI.loader
-    .load(bgSetup)
-    .load(skeletonSetup)
-    .load(chickenSetup)
-    .load(drumStickSetup)
-  gameTimer();
-  respondTimer()
+    PIXI.loader
+        .load(bgSetup)
+        .load(skeletonSetup)
+        .load(chickenSetup)
+        .load(drumStickSetup)
+    gameTimer();
+    respondTimer()
 };
 
 const gameTimer = () => {
