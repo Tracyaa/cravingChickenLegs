@@ -22,7 +22,3 @@ Click flashing prompt to start the game!
 Tips-
 You'll notice that the chicken leg relocates randomly on the screen every ten seconds adding a bit of unpredictability. You will also notice that since two players are sharing the same keyboard, that both players cannot hold down a direction key at the same time and move, you must tap continuously to move both characters.
 
-1. clone the 
-
-
-```javascript```
