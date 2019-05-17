@@ -5,7 +5,6 @@ What began as a simple Javascript game project quickly turned into a gaming fias
 
 Please read the rules and instructions!
 
-To play, go to https://dallasbille.github.io/craving-chicken-legs-on-heroku/cravingChickenLegs/
 
 ## Installation
 In console.
